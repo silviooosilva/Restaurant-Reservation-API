@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Review;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReviewRequest;
-use App\Models\Review;
 use App\Utils\Helper;
 
 class ReviewController extends Controller
@@ -13,9 +12,6 @@ class ReviewController extends Controller
 
     public function __construct()
     {
-        if (!Helper::isUserOwner()) {
-            return Helper::ResponseAPI('Error! You do not have permission to perform this action', null, 403);
-        }
         $this->reviewService = app('ReviewRepository');
     }
 

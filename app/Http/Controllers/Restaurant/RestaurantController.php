@@ -3,12 +3,8 @@
 namespace App\Http\Controllers\Restaurant;
 
 use App\Utils\Helper;
-use App\Models\Restaurant;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RestaurantRequest;
-use App\Services\Restaurant\RestaurantService;
 
 class RestaurantController extends Controller
 {
@@ -16,9 +12,6 @@ class RestaurantController extends Controller
 
     public function __construct()
     {
-        if (!Helper::isUserOwner()) {
-            return Helper::ResponseAPI('Error! You do not have permission to perform this action', null, 403);
-        }
         $this->restaurantService = app('RestaurantRepository');
     }
 

@@ -13,9 +13,6 @@ class ReservationController extends Controller
 
     public function __construct()
     {
-        if (!Helper::isUserOwner()) {
-            return Helper::ResponseAPI('Error! You do not have permission to perform this action', null, 403);
-        }
         $this->reservationService = app('ReservationRepository');
     }
 
