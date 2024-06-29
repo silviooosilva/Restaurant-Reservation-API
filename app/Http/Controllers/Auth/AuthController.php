@@ -18,11 +18,9 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             $token = $user->createToken('LaravelPassport')->accessToken;
-            return response()->json([
-                'token' => $token
-            ]);
+            return Helper::ResponseAPI('token', $token);
         }
-        return Helper::ResponseAPI(['error' => 'Unauthorized', 'message' => 'Incorret credentials or User does not exists'], null, 403);
+        return Helper::ResponseAPI('Incorret credentials or User does not exists', null, 403);
     }
 
     public function register(RegisterRequest $request)
