@@ -24,8 +24,9 @@ Este README fornece uma visão geral do projeto, como configurá-lo, executá-lo
 
 1. Clone o repositório para a sua máquina local:
 
-```git clone https://github.com/silviooosilva/Restaurant-Reservation-API.git
-    cd Restaurant-Reservation-API
+```
+git clone https://github.com/silviooosilva/Restaurant-Reservation-API.git
+cd Restaurant-Reservation-API
 ```
 
 2. Instale as dependências
@@ -62,6 +63,12 @@ php artisan passport:keys
 
 ```
 php artisan migrate
+```
+
+<p>Ou, pode ainda importar o arquivo <b>SQL</b>no diretório migrations</p>
+
+```
+apidb.sql
 ```
 
 2. Execute os seeders para gerar o acesso Admin:
