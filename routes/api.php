@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('auth')->group(function () {
     Route::post('login', [AuthController::class, 'login'])->name('auth.login');
     Route::post('register', [AuthController::class, 'register'])->name('auth.register');
-    Route::delete('logout', [AuthController::class, 'logout'])->name('auth.logout')->middleware(APIAuthMiddleware::class);
+    Route::delete('logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
 
 Route::prefix('restaurants')->group(function () {
