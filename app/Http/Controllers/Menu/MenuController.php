@@ -44,7 +44,7 @@ class MenuController extends Controller
         if ($menuUpdate) {
             return Helper::ResponseAPI('Menu updated successfully', $menuUpdate);
         }
-        return Helper::ResponseAPI('Whoops! Something went wrong. Verify your entries and try again.');
+        return Helper::ResponseAPI('Whoops! Something went wrong. Verify your entries and try again.', null, 400);
     }
 
     public function delete(int $restaurant, int $menu)
