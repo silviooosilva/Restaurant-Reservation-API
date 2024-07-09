@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('table_id')->constrained('tables')->cascadeOnDelete();
             $table->dateTime('reservation_time');
             $table->integer('number_of_people');
-            $table->enum('status', []);
+            $table->enum('status', ['pending', 'confirmed', 'cancelled']);
             $table->timestamps();
         });
     }
