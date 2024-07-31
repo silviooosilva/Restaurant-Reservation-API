@@ -24,6 +24,11 @@ class Helper
         return response()->json(['message' => $response['message'], 'data' => $response['data']], $status);
     }
 
+    public static function isUserOwner()
+    {
+        return (Auth::guard('api')->check() && Auth::guard('api')->user()->role == 'owner' ? true : false);
+    }
+
     public static function AuthUserId()
     {
         return Auth::guard('api')->user()->id;
